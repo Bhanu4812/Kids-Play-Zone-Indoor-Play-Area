@@ -1,0 +1,1 @@
+/* Page filtering is initialized in main.js after shared content is rendered. */

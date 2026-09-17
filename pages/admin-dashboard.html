@@ -1,0 +1,1302 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>Admin Console | WonderNest Play</title>
+        <meta
+            name="description"
+            content="WonderNest operations, capacity, membership and revenue console."
+        />
+        <link rel="stylesheet" href="../assets/css/dashboard.css" />
+        <script src="../assets/js/theme.js"></script>
+    </head>
+    <body class="dashboard-page" data-portal="admin">
+        <header class="dashboard-topbar">
+            <button
+                class="menu-btn"
+                data-dashboard-menu
+                aria-label="Open menu"
+                aria-expanded="false"
+            >
+                ☰
+            </button>
+            <a class="topbar-brand" href="index.html">
+                <span class="brand-mark">W</span>
+                <span>WonderNest Play</span>
+            </a>
+            <div class="topbar-actions">
+                <button class="icon-btn" data-theme-toggle aria-label="Toggle dark mode">◐</button>
+                <button class="icon-btn" data-direction-toggle aria-label="Toggle direction">
+                    RTL
+                </button>
+                <div class="dropdown">
+                    <button
+                        class="icon-btn"
+                        data-dropdown-trigger="notifications"
+                        aria-label="Notifications"
+                    >
+                        <svg class="dashboard-bell" aria-hidden="true" viewBox="0 0 24 24">
+                            <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"></path>
+                            <path d="M10 21h4"></path>
+                        </svg>
+                        <span class="notification-count">5</span>
+                    </button>
+                    <div class="dashboard-dropdown" data-dropdown="notifications" hidden>
+                        <h3>Notifications</h3>
+                        <div class="notice">
+                            <i class="notice-dot"></i>
+                            <span>12 new bookings today</span>
+                        </div>
+                        <div class="notice">
+                            <i class="notice-dot"></i>
+                            <span>Challenge Zone nearing capacity</span>
+                        </div>
+                        <div class="notice">
+                            <i class="notice-dot"></i>
+                            <span>3 memberships expire this week</span>
+                        </div>
+                        <div class="notice">
+                            <i class="notice-dot"></i>
+                            <span>2 birthday enquiries pending</span>
+                        </div>
+                        <div class="notice">
+                            <i class="notice-dot"></i>
+                            <span>New parent account created</span>
+                        </div>
+                        <div class="dropdown-actions">
+                            <button data-mark-read>Mark All as Read</button>
+                            <a href="#messages" data-view-link="messages">View all</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="profile-control" data-dropdown-trigger="profile">
+                        <span class="avatar">AD</span>
+                        <span class="profile-copy">
+                            <strong>Admin</strong>
+                            <small>Operations manager</small>
+                        </span>
+                        <span>⌄</span>
+                    </button>
+                    <div class="dashboard-dropdown" data-dropdown="profile" hidden>
+                        <a class="dropdown-link" href="#settings" data-view-link="settings">
+                            My Profile
+                        </a>
+                        <a class="dropdown-link" href="#settings" data-view-link="settings">
+                            Account Settings
+                        </a>
+                        <a class="dropdown-link" href="#messages" data-view-link="messages">
+                            Notifications
+                        </a>
+                        <a class="dropdown-link" href="#messages" data-view-link="messages">Help</a>
+                        <a class="dropdown-link" href="login.html">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="dashboard-layout">
+            <aside class="dashboard-sidebar" data-sidebar>
+                <a class="sidebar-brand" href="index.html">
+                    <span class="brand-mark">W</span>
+                    <span>WonderNest Play</span>
+                </a>
+                <span class="portal-label">ADMIN CONSOLE</span>
+                <nav class="dashboard-nav">
+                    <a class="sidebar-link active" href="#overview" data-view-link="overview">
+                        <span class="nav-icon">
+                            <svg>
+                                <use href="../assets/images/dashboard-icons.svg#overview"></use>
+                            </svg>
+                        </span>
+                        Overview
+                    </a>
+                    <a class="sidebar-link" href="#bookings" data-view-link="bookings">
+                        <span class="nav-icon">
+                            <svg>
+                                <use href="../assets/images/dashboard-icons.svg#calendar"></use>
+                            </svg>
+                        </span>
+                        Bookings
+                    </a>
+                    <a class="sidebar-link" href="#zones" data-view-link="zones">
+                        <span class="nav-icon">
+                            <svg><use href="../assets/images/dashboard-icons.svg#zones"></use></svg>
+                        </span>
+                        Play Zones
+                    </a>
+                    <a class="sidebar-link" href="#parents" data-view-link="parents">
+                        <span class="nav-icon">
+                            <svg>
+                                <use href="../assets/images/dashboard-icons.svg#parents"></use>
+                            </svg>
+                        </span>
+                        Parents
+                    </a>
+                    <a class="sidebar-link" href="#children" data-view-link="children">
+                        <span class="nav-icon">
+                            <svg>
+                                <use href="../assets/images/dashboard-icons.svg#children"></use>
+                            </svg>
+                        </span>
+                        Children
+                    </a>
+                    <a class="sidebar-link" href="#memberships" data-view-link="memberships">
+                        <span class="nav-icon">
+                            <svg>
+                                <use href="../assets/images/dashboard-icons.svg#membership"></use>
+                            </svg>
+                        </span>
+                        Memberships
+                    </a>
+                    <a class="sidebar-link" href="#parties" data-view-link="parties">
+                        <span class="nav-icon">
+                            <svg>
+                                <use href="../assets/images/dashboard-icons.svg#birthday"></use>
+                            </svg>
+                        </span>
+                        Birthday Parties
+                    </a>
+                    <a class="sidebar-link" href="#payments" data-view-link="payments">
+                        <span class="nav-icon">
+                            <svg>
+                                <use href="../assets/images/dashboard-icons.svg#payments"></use>
+                            </svg>
+                        </span>
+                        Payments
+                    </a>
+                    <a class="sidebar-link" href="#invoices" data-view-link="invoices">
+                        <span class="nav-icon">
+                            <svg>
+                                <use href="../assets/images/dashboard-icons.svg#invoice"></use>
+                            </svg>
+                        </span>
+                        Invoices
+                    </a>
+                    <a class="sidebar-link" href="#messages" data-view-link="messages">
+                        <span class="nav-icon">
+                            <svg>
+                                <use href="../assets/images/dashboard-icons.svg#messages"></use>
+                            </svg>
+                        </span>
+                        Messages
+                    </a>
+                    <a class="sidebar-link" href="#staff" data-view-link="staff">
+                        <span class="nav-icon">
+                            <svg><use href="../assets/images/dashboard-icons.svg#staff"></use></svg>
+                        </span>
+                        Staff
+                    </a>
+                    <a class="sidebar-link" href="#reports" data-view-link="reports">
+                        <span class="nav-icon">
+                            <svg>
+                                <use href="../assets/images/dashboard-icons.svg#reports"></use>
+                            </svg>
+                        </span>
+                        Reports
+                    </a>
+                    <a class="sidebar-link" href="#settings" data-view-link="settings">
+                        <span class="nav-icon">
+                            <svg>
+                                <use href="../assets/images/dashboard-icons.svg#settings"></use>
+                            </svg>
+                        </span>
+                        Settings
+                    </a>
+                    <a class="sidebar-link" href="login.html">
+                        <span class="nav-icon">
+                            <svg>
+                                <use href="../assets/images/dashboard-icons.svg#logout"></use>
+                            </svg>
+                        </span>
+                        Logout
+                    </a>
+                </nav>
+                <div class="sidebar-card">
+                    <small>SYSTEM STATUS</small>
+                    <h3>All systems operational</h3>
+                    <div class="system-row">
+                        <span>Booking System</span>
+                        <i class="status-dot"></i>
+                    </div>
+                    <div class="system-row">
+                        <span>Payments</span>
+                        <i class="status-dot"></i>
+                    </div>
+                    <div class="system-row">
+                        <span>Capacity Tracking</span>
+                        <i class="status-dot"></i>
+                    </div>
+                </div>
+            </aside>
+            <div class="sidebar-backdrop" data-sidebar-backdrop></div>
+            <main class="dashboard-main" id="main-content">
+                <section class="dashboard-view" data-dashboard-view="overview">
+                    <div class="page-intro centered">
+                        <span class="eyebrow">ADMIN OVERVIEW</span>
+                        <h1>Good morning, Admin</h1>
+                        <p>Here's what's happening across WonderNest Play today.</p>
+                    </div>
+                    <div class="kpi-grid six">
+                        <article class="panel metric">
+                            <span class="metric-icon">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <rect x="3" y="5" width="18" height="16" rx="2"></rect>
+                                    <path d="M16 3v4M8 3v4M3 10h18M8 15l2 2 5-5"></path>
+                                </svg>
+                            </span>
+                            <span class="metric-label">Today's Bookings</span>
+                            <strong class="metric-value">48</strong>
+                            <span class="metric-meta up">+12% vs last Thursday</span>
+                        </article>
+                        <article class="panel metric">
+                            <span class="metric-icon">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M7 5h10M7 9h10M7 5c6 0 6 8 0 8h2l7 7"></path>
+                                </svg>
+                            </span>
+                            <span class="metric-label">Today's Revenue</span>
+                            <strong class="metric-value">₹42,850</strong>
+                            <span class="metric-meta up">+8.4% from yesterday</span>
+                        </article>
+                        <article class="panel metric">
+                            <span class="metric-icon">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+                                    <path d="M3 10h18M7 15h4"></path>
+                                </svg>
+                            </span>
+                            <span class="metric-label">Active Members</span>
+                            <strong class="metric-value">326</strong>
+                            <span class="metric-meta">14 renewals due</span>
+                        </article>
+                        <article class="panel metric">
+                            <span class="metric-icon">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <circle cx="9" cy="8" r="4"></circle>
+                                    <path d="M2.5 21a6.5 6.5 0 0 1 13 0M17 8v6M14 11h6"></path>
+                                </svg>
+                            </span>
+                            <span class="metric-label">Children Checked In</span>
+                            <strong class="metric-value">67</strong>
+                            <span class="metric-meta">of 120 capacity</span>
+                        </article>
+                        <article class="panel metric">
+                            <span class="metric-icon">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path
+                                        d="M4 10h16v11H4zM2 7h20v3H2zM12 7v14M7.5 7C5 7 4 5.5 5 4s4.5 0 7 3M16.5 7c2.5 0 3.5-1.5 2.5-3s-4.5 0-7 3"
+                                    ></path>
+                                </svg>
+                            </span>
+                            <span class="metric-label">Birthday Parties</span>
+                            <strong class="metric-value">6</strong>
+                            <span class="metric-meta">2 currently active</span>
+                        </article>
+                        <article class="panel metric">
+                            <span class="metric-icon">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M4 19v-6M10 19V9M16 19V5M22 19H2"></path>
+                                </svg>
+                            </span>
+                            <span class="metric-label">Current Occupancy</span>
+                            <strong class="metric-value">72%</strong>
+                            <span class="metric-meta">Comfortable capacity</span>
+                        </article>
+                    </div>
+                    <div class="chart-grid">
+                        <article class="panel chart-card">
+                            <div class="panel-head">
+                                <div>
+                                    <h3>Weekly Booking Trend</h3>
+                                    <span class="panel-subtitle">
+                                        Bookings received during the current week.
+                                    </span>
+                                </div>
+                                <select>
+                                    <option>7 Days</option>
+                                </select>
+                            </div>
+                            <div class="chart-box">
+                                <canvas data-chart="admin-bookings"></canvas>
+                            </div>
+                        </article>
+                        <article class="panel chart-card">
+                            <div class="panel-head">
+                                <div>
+                                    <h3>Zone Popularity</h3>
+                                    <span class="panel-subtitle">Share of today's visits</span>
+                                </div>
+                            </div>
+                            <div class="chart-box">
+                                <canvas data-chart="admin-zone-popularity"></canvas>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="chart-grid equal">
+                        <article class="panel chart-card">
+                            <div class="panel-head">
+                                <h3>Monthly Revenue</h3>
+                                <span class="badge active">₹10.1L Sep</span>
+                            </div>
+                            <div class="chart-box">
+                                <canvas data-chart="admin-revenue"></canvas>
+                            </div>
+                        </article>
+                        <article class="panel chart-card">
+                            <div class="panel-head">
+                                <h3>Hourly Occupancy</h3>
+                                <span class="badge checked">Live</span>
+                            </div>
+                            <div class="chart-box">
+                                <canvas data-chart="admin-occupancy"></canvas>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="chart-grid">
+                        <article class="panel chart-card">
+                            <div class="panel-head">
+                                <h3>Membership Distribution</h3>
+                                <span class="panel-subtitle">326 active members</span>
+                            </div>
+                            <div class="chart-box">
+                                <canvas data-chart="admin-memberships"></canvas>
+                            </div>
+                        </article>
+                        <article class="panel">
+                            <div class="panel-head"><h3>Revenue Breakdown</h3></div>
+                            <div class="list">
+                                <div>
+                                    <div class="row-between">
+                                        <small>Play Sessions</small>
+                                        <strong>42%</strong>
+                                    </div>
+                                    <div class="progress"><span style="width: 42%"></span></div>
+                                </div>
+                                <div>
+                                    <div class="row-between">
+                                        <small>Memberships</small>
+                                        <strong>31%</strong>
+                                    </div>
+                                    <div class="progress"><span style="width: 31%"></span></div>
+                                </div>
+                                <div>
+                                    <div class="row-between">
+                                        <small>Birthday Parties</small>
+                                        <strong>21%</strong>
+                                    </div>
+                                    <div class="progress"><span style="width: 21%"></span></div>
+                                </div>
+                                <div>
+                                    <div class="row-between">
+                                        <small>Food & Add-ons</small>
+                                        <strong>6%</strong>
+                                    </div>
+                                    <div class="progress"><span style="width: 6%"></span></div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="capacity-grid">
+                        <article class="panel compact-stat">
+                            <div class="row-between">
+                                <strong>Toddler Zone</strong>
+                                <span class="badge available">Comfortable</span>
+                            </div>
+                            <p>18 / 30 · 60%</p>
+                            <div class="progress"><span style="width: 60%"></span></div>
+                        </article>
+                        <article class="panel compact-stat">
+                            <div class="row-between">
+                                <strong>Junior Adventure</strong>
+                                <span class="badge limited">Busy</span>
+                            </div>
+                            <p>24 / 30 · 80%</p>
+                            <div class="progress"><span style="width: 80%"></span></div>
+                        </article>
+                        <article class="panel compact-stat">
+                            <div class="row-between">
+                                <strong>Explorer Zone</strong>
+                                <span class="badge available">Available</span>
+                            </div>
+                            <p>17 / 25 · 68%</p>
+                            <div class="progress"><span style="width: 68%"></span></div>
+                        </article>
+                        <article class="panel compact-stat">
+                            <div class="row-between">
+                                <strong>Challenge Zone</strong>
+                                <span class="badge available">Comfortable</span>
+                            </div>
+                            <p>8 / 20 · 40%</p>
+                            <div class="progress"><span style="width: 40%"></span></div>
+                        </article>
+                    </div>
+                    <article class="panel">
+                        <div class="panel-head">
+                            <div>
+                                <h3>Today's Bookings</h3>
+                                <span class="panel-subtitle">Live arrivals and session status</span>
+                            </div>
+                            <button class="btn btn-sm" data-view-link="bookings">Manage all</button>
+                        </div>
+                        <div class="table-wrap">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Booking</th>
+                                        <th>Parent</th>
+                                        <th>Children</th>
+                                        <th>Zone</th>
+                                        <th>Time</th>
+                                        <th>Amount</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>WN-10518</td>
+                                        <td>Neha Gupta</td>
+                                        <td>2</td>
+                                        <td>Junior</td>
+                                        <td>10:00</td>
+                                        <td>₹1,198</td>
+                                        <td><span class="badge checked">Checked In</span></td>
+                                        <td><button class="btn btn-sm">View</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>WN-10517</td>
+                                        <td>Rahul Mehta</td>
+                                        <td>1</td>
+                                        <td>Explorer</td>
+                                        <td>11:30</td>
+                                        <td>₹699</td>
+                                        <td><span class="badge confirmed">Confirmed</span></td>
+                                        <td><button class="btn btn-sm">View</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>WN-10516</td>
+                                        <td>Sara Khan</td>
+                                        <td>1</td>
+                                        <td>Toddler</td>
+                                        <td>12:00</td>
+                                        <td>₹499</td>
+                                        <td><span class="badge pending">Pending</span></td>
+                                        <td><button class="btn btn-sm">View</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>WN-10515</td>
+                                        <td>Vikram Rao</td>
+                                        <td>2</td>
+                                        <td>Challenge</td>
+                                        <td>1:30</td>
+                                        <td>₹1,398</td>
+                                        <td><span class="badge completed">Completed</span></td>
+                                        <td><button class="btn btn-sm">View</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </article>
+                    <br />
+                    <div class="two-col">
+                        <article class="panel">
+                            <span class="eyebrow">OPERATIONAL HIGHLIGHTS</span>
+                            <div class="list">
+                                <div class="list-row">
+                                    <div>Today's attendance</div>
+                                    <strong>142 children</strong>
+                                </div>
+                                <div class="list-row">
+                                    <div>Average occupancy</div>
+                                    <strong>68%</strong>
+                                </div>
+                                <div class="list-row">
+                                    <div>Membership renewals</div>
+                                    <strong>14 due</strong>
+                                </div>
+                                <div class="list-row">
+                                    <div>Birthday enquiries</div>
+                                    <strong>9 open</strong>
+                                </div>
+                                <div class="list-row">
+                                    <div>Average rating</div>
+                                    <strong>4.8 / 5</strong>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="panel">
+                            <span class="eyebrow">UPCOMING ACTIONS</span>
+                            <div class="list">
+                                <div class="list-row">
+                                    <strong>10:30 AM</strong>
+                                    <div>Toddler Zone inspection</div>
+                                </div>
+                                <div class="list-row">
+                                    <strong>12:00 PM</strong>
+                                    <div>Birthday room preparation</div>
+                                </div>
+                                <div class="list-row">
+                                    <strong>2:30 PM</strong>
+                                    <div>Staff rotation</div>
+                                </div>
+                                <div class="list-row">
+                                    <strong>4:00 PM</strong>
+                                    <div>Challenge Zone cleaning</div>
+                                </div>
+                                <div class="list-row">
+                                    <strong>6:30 PM</strong>
+                                    <div>Daily capacity review</div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+                <section class="dashboard-view" data-dashboard-view="bookings" hidden>
+                    <div class="page-intro">
+                        <div>
+                            <span class="eyebrow">OPERATIONS</span>
+                            <h1>Booking Management</h1>
+                            <p>Search, filter and manage every play session.</p>
+                        </div>
+                        <button class="btn btn-primary">+ New Booking</button>
+                    </div>
+                    <div class="kpi-grid six">
+                        <article class="panel compact-stat">
+                            <span class="metric-label">Today's Bookings</span>
+                            <strong>48</strong>
+                        </article>
+                        <article class="panel compact-stat">
+                            <span class="metric-label">Upcoming</span>
+                            <strong>126</strong>
+                        </article>
+                        <article class="panel compact-stat">
+                            <span class="metric-label">Completed</span>
+                            <strong>1,482</strong>
+                        </article>
+                        <article class="panel compact-stat">
+                            <span class="metric-label">Cancelled</span>
+                            <strong>34</strong>
+                        </article>
+                        <article class="panel compact-stat">
+                            <span class="metric-label">Revenue</span>
+                            <strong>₹42,850</strong>
+                        </article>
+                    </div>
+                    <article class="panel chart-card">
+                        <div class="panel-head"><h3>Booking Trend</h3></div>
+                        <div class="chart-box"><canvas data-chart="admin-bookings"></canvas></div>
+                    </article>
+                    <br />
+                    <div class="filter-bar">
+                        <input
+                            data-table-search="admin-bookings"
+                            placeholder="Booking ID, parent, child or zone"
+                        />
+                        <input type="date" />
+                        <select>
+                            <option>All zones</option>
+                            <option>Junior</option>
+                            <option>Toddler</option>
+                        </select>
+                        <select data-table-filter="status">
+                            <option value="">All statuses</option>
+                            <option>Confirmed</option>
+                            <option>Pending</option>
+                            <option>Completed</option>
+                        </select>
+                    </div>
+                    <div class="table-wrap">
+                        <table data-table="admin-bookings">
+                            <thead>
+                                <tr>
+                                    <th>Booking ID</th>
+                                    <th>Parent</th>
+                                    <th>Children</th>
+                                    <th>Zone</th>
+                                    <th>Date</th>
+                                    <th>Time</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>WN-10518</td>
+                                    <td>Neha Gupta</td>
+                                    <td>Aryan, Myra</td>
+                                    <td>Junior</td>
+                                    <td>17 Sep</td>
+                                    <td>10:00</td>
+                                    <td>₹1,198</td>
+                                    <td data-status="Confirmed">
+                                        <span class="badge confirmed">Confirmed</span>
+                                    </td>
+                                    <td><button class="btn btn-sm">Manage</button></td>
+                                </tr>
+                                <tr>
+                                    <td>WN-10517</td>
+                                    <td>Rahul Mehta</td>
+                                    <td>Dev</td>
+                                    <td>Explorer</td>
+                                    <td>17 Sep</td>
+                                    <td>11:30</td>
+                                    <td>₹699</td>
+                                    <td data-status="Pending">
+                                        <span class="badge pending">Pending</span>
+                                    </td>
+                                    <td><button class="btn btn-sm">Manage</button></td>
+                                </tr>
+                                <tr>
+                                    <td>WN-10516</td>
+                                    <td>Sara Khan</td>
+                                    <td>Zoya</td>
+                                    <td>Toddler</td>
+                                    <td>17 Sep</td>
+                                    <td>12:00</td>
+                                    <td>₹499</td>
+                                    <td data-status="Completed">
+                                        <span class="badge completed">Completed</span>
+                                    </td>
+                                    <td><button class="btn btn-sm">View</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+                <section class="dashboard-view" data-dashboard-view="zones" hidden>
+                    <div class="page-intro">
+                        <div>
+                            <span class="eyebrow">CAPACITY</span>
+                            <h1>Play Zone Management</h1>
+                            <p>Monitor live occupancy, sessions and zone performance.</p>
+                        </div>
+                    </div>
+                    <div class="compact-grid">
+                        <article class="panel compact-stat">
+                            <span class="metric-label">Total Zones</span>
+                            <strong>4</strong>
+                        </article>
+                        <article class="panel compact-stat">
+                            <span class="metric-label">Current Occupancy</span>
+                            <strong>67</strong>
+                        </article>
+                        <article class="panel compact-stat">
+                            <span class="metric-label">Available Capacity</span>
+                            <strong>53</strong>
+                        </article>
+                        <article class="panel compact-stat">
+                            <span class="metric-label">Today's Sessions</span>
+                            <strong>18</strong>
+                        </article>
+                    </div>
+                    <div class="capacity-grid">
+                        <article class="panel">
+                            <h3>Toddler Zone</h3>
+                            <p class="panel-subtitle">Ages 1–4 · 18 / 30 children</p>
+                            <div class="progress"><span style="width: 60%"></span></div>
+                            <p>Next: 12:00 PM</p>
+                            <button class="btn btn-sm">Manage</button>
+                        </article>
+                        <article class="panel">
+                            <h3>Junior Adventure</h3>
+                            <p class="panel-subtitle">Ages 5–8 · 24 / 30 children</p>
+                            <div class="progress"><span style="width: 80%"></span></div>
+                            <p>Next: 12:30 PM</p>
+                            <button class="btn btn-sm">Manage</button>
+                        </article>
+                        <article class="panel">
+                            <h3>Explorer Zone</h3>
+                            <p class="panel-subtitle">Ages 7–11 · 17 / 25 children</p>
+                            <div class="progress"><span style="width: 68%"></span></div>
+                            <p>Next: 1:00 PM</p>
+                            <button class="btn btn-sm">Manage</button>
+                        </article>
+                        <article class="panel">
+                            <h3>Challenge Zone</h3>
+                            <p class="panel-subtitle">Ages 8–12 · 8 / 20 children</p>
+                            <div class="progress"><span style="width: 40%"></span></div>
+                            <p>Next: 1:30 PM</p>
+                            <button class="btn btn-sm">Manage</button>
+                        </article>
+                    </div>
+                    <article class="panel chart-card">
+                        <div class="panel-head"><h3>Occupancy by Hour</h3></div>
+                        <div class="chart-box"><canvas data-chart="admin-occupancy"></canvas></div>
+                    </article>
+                </section>
+                <section class="dashboard-view" data-dashboard-view="parents" hidden>
+                    <div class="page-intro">
+                        <div>
+                            <span class="eyebrow">CUSTOMERS</span>
+                            <h1>Parent Accounts</h1>
+                            <p>Understand growth, membership and returning families.</p>
+                        </div>
+                        <button class="btn btn-primary">+ Add Parent</button>
+                    </div>
+                    <div class="compact-grid">
+                        <article class="panel compact-stat">
+                            <span class="metric-label">Total Parents</span>
+                            <strong>684</strong>
+                        </article>
+                        <article class="panel compact-stat">
+                            <span class="metric-label">New This Month</span>
+                            <strong>42</strong>
+                        </article>
+                        <article class="panel compact-stat">
+                            <span class="metric-label">Active Members</span>
+                            <strong>326</strong>
+                        </article>
+                        <article class="panel compact-stat">
+                            <span class="metric-label">Repeat Visitors</span>
+                            <strong>71%</strong>
+                        </article>
+                    </div>
+                    <article class="panel chart-card">
+                        <div class="panel-head"><h3>Parent Growth</h3></div>
+                        <div class="chart-box"><canvas data-chart="parent-growth"></canvas></div>
+                    </article>
+                    <br />
+                    <div class="table-wrap">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Parent ID</th>
+                                    <th>Parent</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>Children</th>
+                                    <th>Membership</th>
+                                    <th>Visits</th>
+                                    <th>Joined</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>WN-P684</td>
+                                    <td>Neha Gupta</td>
+                                    <td>neha@example.com</td>
+                                    <td>98765 41028</td>
+                                    <td>2</td>
+                                    <td>Explorer Plus</td>
+                                    <td>18</td>
+                                    <td>12 Jan</td>
+                                    <td><span class="badge active">Active</span></td>
+                                </tr>
+                                <tr>
+                                    <td>WN-P683</td>
+                                    <td>Rahul Mehta</td>
+                                    <td>rahul@example.com</td>
+                                    <td>98765 41029</td>
+                                    <td>1</td>
+                                    <td>Mini Explorer</td>
+                                    <td>9</td>
+                                    <td>04 Mar</td>
+                                    <td><span class="badge active">Active</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+                <section class="dashboard-view" data-dashboard-view="children" hidden>
+                    <div class="page-intro">
+                        <div>
+                            <span class="eyebrow">PROFILES</span>
+                            <h1>Children Profiles</h1>
+                            <p>Track registered children, visits and age-group needs.</p>
+                        </div>
+                    </div>
+                    <div class="compact-grid">
+                        <article class="panel compact-stat">
+                            <span class="metric-label">Registered Children</span>
+                            <strong>892</strong>
+                        </article>
+                        <article class="panel compact-stat">
+                            <span class="metric-label">Checked In</span>
+                            <strong>67</strong>
+                        </article>
+                        <article class="panel compact-stat">
+                            <span class="metric-label">Popular Age Group</span>
+                            <strong>5–8</strong>
+                        </article>
+                        <article class="panel compact-stat">
+                            <span class="metric-label">Average Visits</span>
+                            <strong>6.8</strong>
+                        </article>
+                    </div>
+                    <div class="chart-grid equal">
+                        <article class="panel chart-card">
+                            <div class="panel-head"><h3>Children by Age Group</h3></div>
+                            <div class="chart-box"><canvas data-chart="children-age"></canvas></div>
+                        </article>
+                        <article class="panel chart-card">
+                            <div class="panel-head"><h3>Visits by Age Group</h3></div>
+                            <div class="chart-box">
+                                <canvas data-chart="children-visits"></canvas>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+                <section class="dashboard-view" data-dashboard-view="memberships" hidden>
+                    <div class="page-intro">
+                        <div>
+                            <span class="eyebrow">PLANS</span>
+                            <h1>Membership Management</h1>
+                            <p>Monitor plan growth, distribution and renewals.</p>
+                        </div>
+                    </div>
+                    <div class="compact-grid">
+                        <article class="panel compact-stat">
+                            <span class="metric-label">Active Memberships</span>
+                            <strong>326</strong>
+                        </article>
+                        <article class="panel compact-stat">
+                            <span class="metric-label">New This Month</span>
+                            <strong>28</strong>
+                        </article>
+                        <article class="panel compact-stat">
+                            <span class="metric-label">Renewals Due</span>
+                            <strong>14</strong>
+                        </article>
+                        <article class="panel compact-stat">
+                            <span class="metric-label">Monthly Revenue</span>
+                            <strong>₹3.12L</strong>
+                        </article>
+                    </div>
+                    <div class="three-col">
+                        <article class="panel chart-card">
+                            <h3>Membership Growth</h3>
+                            <div class="chart-box small">
+                                <canvas data-chart="membership-growth"></canvas>
+                            </div>
+                        </article>
+                        <article class="panel chart-card">
+                            <h3>Plan Distribution</h3>
+                            <div class="chart-box small">
+                                <canvas data-chart="admin-memberships"></canvas>
+                            </div>
+                        </article>
+                        <article class="panel chart-card">
+                            <h3>Renewal Rate</h3>
+                            <div class="chart-box small">
+                                <canvas data-chart="renewal-rate"></canvas>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+                <section class="dashboard-view" data-dashboard-view="parties" hidden>
+                    <div class="page-intro">
+                        <div>
+                            <span class="eyebrow">CELEBRATIONS</span>
+                            <h1>Birthday Party Management</h1>
+                            <p>Coordinate packages, themes, guests and payments.</p>
+                        </div>
+                    </div>
+                    <div class="compact-grid">
+                        <article class="panel compact-stat">
+                            <span class="metric-label">Upcoming Parties</span>
+                            <strong>18</strong>
+                        </article>
+                        <article class="panel compact-stat">
+                            <span class="metric-label">This Month</span>
+                            <strong>26</strong>
+                        </article>
+                        <article class="panel compact-stat">
+                            <span class="metric-label">Party Revenue</span>
+                            <strong>₹2.64L</strong>
+                        </article>
+                        <article class="panel compact-stat">
+                            <span class="metric-label">Average Guests</span>
+                            <strong>17</strong>
+                        </article>
+                    </div>
+                    <div class="three-col">
+                        <article class="panel chart-card">
+                            <h3>Bookings by Month</h3>
+                            <div class="chart-box small">
+                                <canvas data-chart="party-monthly"></canvas>
+                            </div>
+                        </article>
+                        <article class="panel chart-card">
+                            <h3>Package Popularity</h3>
+                            <div class="chart-box small">
+                                <canvas data-chart="party-packages"></canvas>
+                            </div>
+                        </article>
+                        <article class="panel chart-card">
+                            <h3>Theme Popularity</h3>
+                            <div class="chart-box small">
+                                <canvas data-chart="party-themes"></canvas>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+                <section class="dashboard-view" data-dashboard-view="payments" hidden>
+                    <div class="page-intro">
+                        <div>
+                            <span class="eyebrow">FINANCE</span>
+                            <h1>Payments</h1>
+                            <p>Monitor transactions, payment sources and refunds.</p>
+                        </div>
+                        <button class="btn">Export Payments</button>
+                    </div>
+                    <div class="compact-grid">
+                        <article class="panel compact-stat">
+                            <span class="metric-label">Today's Revenue</span>
+                            <strong>₹42,850</strong>
+                        </article>
+                        <article class="panel compact-stat">
+                            <span class="metric-label">Monthly Revenue</span>
+                            <strong>₹10.1L</strong>
+                        </article>
+                        <article class="panel compact-stat">
+                            <span class="metric-label">Pending</span>
+                            <strong>₹18,450</strong>
+                        </article>
+                        <article class="panel compact-stat">
+                            <span class="metric-label">Refunded</span>
+                            <strong>₹6,298</strong>
+                        </article>
+                    </div>
+                    <div class="chart-grid">
+                        <article class="panel chart-card">
+                            <h3>Revenue Trend</h3>
+                            <div class="chart-box">
+                                <canvas data-chart="admin-revenue"></canvas>
+                            </div>
+                        </article>
+                        <article class="panel chart-card">
+                            <h3>Revenue by Source</h3>
+                            <div class="chart-box">
+                                <canvas data-chart="payment-source"></canvas>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+                <section class="dashboard-view" data-dashboard-view="invoices" hidden>
+                    <div class="page-intro">
+                        <div>
+                            <span class="eyebrow">FINANCE</span>
+                            <h1>Invoices</h1>
+                            <p>Review paid, pending and refunded account invoices.</p>
+                        </div>
+                        <button class="btn btn-primary">Create Invoice</button>
+                    </div>
+                    <div class="table-wrap">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Invoice</th>
+                                    <th>Parent</th>
+                                    <th>Date</th>
+                                    <th>Type</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>WN-I2098</td>
+                                    <td>Priya Sharma</td>
+                                    <td>12 Sep</td>
+                                    <td>Session</td>
+                                    <td>₹699</td>
+                                    <td><span class="badge paid">Paid</span></td>
+                                    <td><button class="btn btn-sm">Download</button></td>
+                                </tr>
+                                <tr>
+                                    <td>WN-I2097</td>
+                                    <td>Neha Gupta</td>
+                                    <td>11 Sep</td>
+                                    <td>Birthday</td>
+                                    <td>₹12,499</td>
+                                    <td><span class="badge pending">Pending</span></td>
+                                    <td><button class="btn btn-sm">Open</button></td>
+                                </tr>
+                                <tr>
+                                    <td>WN-I2092</td>
+                                    <td>Rahul Mehta</td>
+                                    <td>09 Sep</td>
+                                    <td>Membership</td>
+                                    <td>₹3,499</td>
+                                    <td><span class="badge refunded">Refunded</span></td>
+                                    <td><button class="btn btn-sm">Open</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+                <section class="dashboard-view" data-dashboard-view="messages" hidden>
+                    <div class="page-intro">
+                        <div>
+                            <span class="eyebrow">INBOX</span>
+                            <h1>Messages</h1>
+                            <p>Respond to parent enquiries across every service.</p>
+                        </div>
+                    </div>
+                    <div class="filter-bar">
+                        <button class="btn btn-primary">All</button>
+                        <button class="btn">Parent Enquiries</button>
+                        <button class="btn">Birthday</button>
+                        <button class="btn">Membership</button>
+                        <button class="btn">Safety</button>
+                        <button class="btn">Unread</button>
+                    </div>
+                    <div class="panel inbox">
+                        <div class="conversation-list">
+                            <button class="conversation active">
+                                <strong>Priya Sharma</strong>
+                                <small>
+                                    <br />
+                                    Can we update the guest count?
+                                </small>
+                            </button>
+                            <button class="conversation">
+                                <strong>Neha Gupta</strong>
+                                <small>
+                                    <br />
+                                    Question about weekend slots.
+                                </small>
+                            </button>
+                            <button class="conversation">
+                                <strong>Rahul Mehta</strong>
+                                <small>
+                                    <br />
+                                    Membership renewal help.
+                                </small>
+                            </button>
+                        </div>
+                        <div class="message-pane">
+                            <div class="panel-head">
+                                <h3>Priya Sharma</h3>
+                                <span class="badge active">Parent Enquiry</span>
+                            </div>
+                            <div class="message-body">
+                                Hello, can we update the guest count for Aarav's party from 16 to
+                                18?
+                            </div>
+                            <div class="message-compose">
+                                <input placeholder="Write a reply" />
+                                <button class="btn btn-primary">Send</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="dashboard-view" data-dashboard-view="staff" hidden>
+                    <div class="page-intro">
+                        <div>
+                            <span class="eyebrow">TEAM</span>
+                            <h1>Staff Management</h1>
+                            <p>Plan shifts, roles and safe coverage for every zone.</p>
+                        </div>
+                        <button class="btn btn-primary">+ Add Staff</button>
+                    </div>
+                    <div class="compact-grid">
+                        <article class="panel compact-stat">
+                            <span class="metric-label">Total Staff</span>
+                            <strong>38</strong>
+                        </article>
+                        <article class="panel compact-stat">
+                            <span class="metric-label">On Shift</span>
+                            <strong>24</strong>
+                        </article>
+                        <article class="panel compact-stat">
+                            <span class="metric-label">Supervisors</span>
+                            <strong>6</strong>
+                        </article>
+                        <article class="panel compact-stat">
+                            <span class="metric-label">Available</span>
+                            <strong>8</strong>
+                        </article>
+                    </div>
+                    <div class="two-col">
+                        <article class="panel">
+                            <h3>Staff Coverage by Zone</h3>
+                            <div class="list">
+                                <div>
+                                    <div class="row-between">
+                                        <small>Toddler Zone</small>
+                                        <strong>7 / 8</strong>
+                                    </div>
+                                    <div class="progress"><span style="width: 88%"></span></div>
+                                </div>
+                                <div>
+                                    <div class="row-between">
+                                        <small>Junior Adventure</small>
+                                        <strong>6 / 7</strong>
+                                    </div>
+                                    <div class="progress"><span style="width: 86%"></span></div>
+                                </div>
+                                <div>
+                                    <div class="row-between">
+                                        <small>Explorer Zone</small>
+                                        <strong>5 / 6</strong>
+                                    </div>
+                                    <div class="progress"><span style="width: 83%"></span></div>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="panel">
+                            <h3>Current Shift</h3>
+                            <div class="list">
+                                <div class="list-row">
+                                    <span class="avatar">AK</span>
+                                    <div>
+                                        <strong>Anita Kumar</strong>
+                                        <p>Supervisor · Toddler Zone</p>
+                                    </div>
+                                    <span class="badge active">On Shift</span>
+                                </div>
+                                <div class="list-row">
+                                    <span class="avatar">RM</span>
+                                    <div>
+                                        <strong>Ravi Menon</strong>
+                                        <p>Play Coach · Junior</p>
+                                    </div>
+                                    <span class="badge active">On Shift</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+                <section class="dashboard-view" data-dashboard-view="reports" hidden>
+                    <div class="page-intro">
+                        <div>
+                            <span class="eyebrow">ANALYTICS</span>
+                            <h1>Reports & Analytics</h1>
+                            <p>Explore booking, revenue, capacity and customer performance.</p>
+                        </div>
+                        <div class="button-row">
+                            <button class="btn">Export CSV</button>
+                            <button class="btn btn-primary">Export PDF</button>
+                        </div>
+                    </div>
+                    <div class="filter-bar">
+                        <input type="date" />
+                        <input type="date" />
+                        <select>
+                            <option>All Zones</option>
+                        </select>
+                        <select>
+                            <option>Executive Summary</option>
+                            <option>Operations</option>
+                        </select>
+                    </div>
+                    <div class="chart-grid equal">
+                        <article class="panel chart-card">
+                            <h3>Booking Trends</h3>
+                            <div class="chart-box">
+                                <canvas data-chart="admin-bookings"></canvas>
+                            </div>
+                        </article>
+                        <article class="panel chart-card">
+                            <h3>Revenue Trends</h3>
+                            <div class="chart-box">
+                                <canvas data-chart="admin-revenue"></canvas>
+                            </div>
+                        </article>
+                        <article class="panel chart-card">
+                            <h3>Occupancy Trends</h3>
+                            <div class="chart-box">
+                                <canvas data-chart="admin-occupancy"></canvas>
+                            </div>
+                        </article>
+                        <article class="panel chart-card">
+                            <h3>Membership Growth</h3>
+                            <div class="chart-box">
+                                <canvas data-chart="membership-growth"></canvas>
+                            </div>
+                        </article>
+                        <article class="panel chart-card">
+                            <h3>Birthday Revenue</h3>
+                            <div class="chart-box">
+                                <canvas data-chart="birthday-revenue"></canvas>
+                            </div>
+                        </article>
+                        <article class="panel chart-card">
+                            <h3>Age Distribution</h3>
+                            <div class="chart-box"><canvas data-chart="children-age"></canvas></div>
+                        </article>
+                        <article class="panel chart-card">
+                            <h3>Zone Popularity</h3>
+                            <div class="chart-box">
+                                <canvas data-chart="admin-zone-popularity"></canvas>
+                            </div>
+                        </article>
+                        <article class="panel chart-card">
+                            <h3>Peak Booking Hours</h3>
+                            <div class="chart-box"><canvas data-chart="peak-hours"></canvas></div>
+                        </article>
+                    </div>
+                </section>
+                <section class="dashboard-view" data-dashboard-view="settings" hidden>
+                    <div class="page-intro">
+                        <div>
+                            <span class="eyebrow">CONFIGURATION</span>
+                            <h1>Settings</h1>
+                            <p>Manage venue, booking, payment and notification preferences.</p>
+                        </div>
+                    </div>
+                    <div class="two-col">
+                        <article class="panel">
+                            <h3>Venue Settings</h3>
+                            <div class="form-grid">
+                                <div class="field">
+                                    <label>Venue name</label>
+                                    <input value="WonderNest Play" />
+                                </div>
+                                <div class="field">
+                                    <label>Daily capacity</label>
+                                    <input value="120" />
+                                </div>
+                                <div class="field">
+                                    <label>Opening time</label>
+                                    <input type="time" value="09:00" />
+                                </div>
+                                <div class="field">
+                                    <label>Closing time</label>
+                                    <input type="time" value="19:00" />
+                                </div>
+                            </div>
+                            <br />
+                            <button class="btn btn-primary">Save Changes</button>
+                        </article>
+                        <article class="panel">
+                            <h3>Operational Alerts</h3>
+                            <div class="list">
+                                <label class="list-row">
+                                    <input type="checkbox" checked />
+                                    Capacity warnings
+                                </label>
+                                <label class="list-row">
+                                    <input type="checkbox" checked />
+                                    Payment failures
+                                </label>
+                                <label class="list-row">
+                                    <input type="checkbox" checked />
+                                    Renewal reminders
+                                </label>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+            </main>
+        </div>
+        <div class="modal" data-modal>
+            <div class="modal-card">
+                <div class="panel-head">
+                    <h2 data-modal-title>Record Details</h2>
+                    <button class="icon-btn" data-close-modal>×</button>
+                </div>
+                <p>This front-end demonstration is ready for backend integration.</p>
+                <button class="btn btn-primary" data-close-modal>Done</button>
+            </div>
+        </div>
+        <script src="../assets/js/chart.umd.min.js"></script>
+        <script src="../assets/js/dashboard-charts.js"></script>
+        <script src="../assets/js/dashboard.js"></script>
+    </body>
+</html>

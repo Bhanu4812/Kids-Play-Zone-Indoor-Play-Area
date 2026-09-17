@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Parent Login | WonderNest Play</title>
+        <meta
+            name="description"
+            content="Log in to manage WonderNest play bookings, memberships, children and birthday parties."
+        />
+        <link rel="canonical" href="https://example.com/pages/login.html" />
+        <link rel="stylesheet" href="../assets/css/style.css" />
+        <script src="../assets/js/theme.js"></script>
+    </head>
+    <body>
+        <main class="auth-shell" id="main-content">
+            <section class="auth-visual auth-visual--login">
+                <a class="brand auth-visual-brand" href="index.html">
+                    <span class="brand-mark brand-mark--premium" aria-hidden="true">
+                        <span class="brand-mark__letter">W</span>
+                        <span class="brand-mark__spark"></span>
+                    </span>
+                    <span>WonderNest Play</span>
+                </a>
+                <p class="auth-visual-intro">
+                    Your family hub for easy visits, joyful celebrations and more time to play.
+                </p>
+                <div class="auth-visual-copy">
+                    <span class="eyebrow">Parent Portal</span>
+                    <h2>Welcome Back to Play</h2>
+                    <p>
+                        Manage bookings, memberships and birthday plans in one calm, secure place.
+                    </p>
+                    <ul class="auth-benefits">
+                        <li>Instant booking access</li>
+                        <li>Membership tracking</li>
+                        <li>Birthday party management</li>
+                    </ul>
+                </div>
+                <aside class="auth-visual-note">
+                    <p>“Everything for their next adventure, together in one calm place.”</p>
+                    <strong>WonderNest Family Support</strong>
+                </aside>
+            </section>
+            <section class="auth-panel">
+                <div class="auth-box">
+                    <div class="auth-head">
+                        <div class="header-actions">
+                            <button
+                                class="utility-button"
+                                data-theme-toggle
+                                aria-label="Toggle theme"
+                            >
+                                ◐
+                            </button>
+                            <button class="utility-button direction-toggle" data-direction-toggle>
+                                RTL
+                            </button>
+                        </div>
+                    </div>
+                    <span class="eyebrow">Parent portal</span>
+                    <h1>Log in</h1>
+                    <p class="lead">Manage bookings, children and memberships.</p>
+                    <form
+                        class="auth-form"
+                        data-validate
+                        data-success="Welcome back! Opening your dashboard…"
+                    >
+                        <div class="field">
+                            <label for="login-email">Email</label>
+                            <input
+                                id="login-email"
+                                name="email"
+                                type="email"
+                                autocomplete="email"
+                                required
+                            />
+                            <small class="field-error"></small>
+                        </div>
+                        <div class="field">
+                            <label for="login-password">Password</label>
+                            <div class="password-field">
+                                <input
+                                    id="login-password"
+                                    name="password"
+                                    type="password"
+                                    autocomplete="current-password"
+                                    required
+                                />
+                                <button type="button" data-password-toggle="login-password">
+                                    Show
+                                </button>
+                            </div>
+                            <small class="field-error"></small>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; gap: 12px">
+                            <label>
+                                <input type="checkbox" />
+                                Remember me
+                            </label>
+                            <a href="contact.html" style="color: var(--coral)">Forgot password?</a>
+                        </div>
+                        <button class="btn btn-primary" type="submit">Log in</button>
+                        <div class="auth-divider"><span>or continue with</span></div>
+                        <div class="grid grid-2">
+                            <button class="btn btn-outline" type="button">Google</button>
+                            <button class="btn btn-outline" type="button">Apple</button>
+                        </div>
+                        <a class="btn btn-outline" href="parent-dashboard.html">
+                            Demo Parent Login
+                        </a>
+                        <p>
+                            New here?
+                            <a href="register.html" style="color: var(--coral)">
+                                Create an account
+                            </a>
+                        </p>
+                    </form>
+                </div>
+            </section>
+        </main>
+        <script src="../assets/js/page-controls.js"></script>
+        <script src="../assets/js/validation.js"></script>
+    </body>
+</html>

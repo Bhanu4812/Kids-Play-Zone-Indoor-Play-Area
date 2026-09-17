@@ -1,0 +1,101 @@
+html[dir="rtl"] body {
+    text-align: right;
+}
+html[dir="rtl"] .nav {
+    margin-left: 0;
+    margin-right: auto;
+}
+html[dir="rtl"] .dropdown-menu {
+    left: auto;
+    right: -18px;
+}
+html[dir="rtl"] .header-login {
+    margin-left: 0;
+}
+html[dir="rtl"] .nav {
+    margin-right: auto;
+    margin-left: 0;
+}
+html[dir="rtl"] .check-list li {
+    padding-left: 0;
+    padding-right: 28px;
+}
+html[dir="rtl"] .check-list li::before {
+    left: auto;
+    right: 0;
+}
+html[dir="rtl"] th,
+html[dir="rtl"] td {
+    text-align: right;
+}
+html[dir="rtl"] .dashboard-sidebar {
+    left: auto;
+    right: 0;
+}
+html[dir="rtl"] .dashboard-main {
+    margin-left: 0;
+    margin-right: 270px;
+}
+html[dir="rtl"] .dashboard-topbar .search {
+    margin-right: 0;
+    margin-left: auto;
+}
+html[dir="rtl"] .auth-visual-copy {
+    left: auto;
+    right: 8%;
+}
+html[dir="rtl"] .auth-benefits li {
+    padding-left: 0;
+    padding-right: 28px;
+}
+html[dir="rtl"] .auth-benefits li::before {
+    left: auto;
+    right: 0;
+}
+html[dir="rtl"] .auth-corner-tools {
+    right: auto;
+    left: 24px;
+}
+html[dir="rtl"] .special-corner-tools {
+    right: auto;
+    left: 24px;
+}
+html[dir="rtl"] .visual-note {
+    direction: rtl;
+}
+
+@media (max-width: 1180px) {
+    html[dir="rtl"] .nav {
+        right: 0;
+        left: auto;
+        margin: 0;
+        transform: translateX(105%);
+    }
+    html[dir="rtl"] .nav.open {
+        transform: none;
+    }
+    html[dir="rtl"] .header-actions {
+        grid-column: 3;
+        justify-self: end;
+        margin-right: 0;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 520px) {
+    html[dir="rtl"] .header-actions {
+        grid-column: 2;
+    }
+}
+
+@media (max-width: 980px) {
+    html[dir="rtl"] .dashboard-main {
+        margin-right: 0;
+    }
+    html[dir="rtl"] .dashboard-sidebar {
+        transform: translateX(105%);
+    }
+    html[dir="rtl"] .dashboard-sidebar.open {
+        transform: none;
+    }
+}

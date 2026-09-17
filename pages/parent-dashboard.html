@@ -1,0 +1,1290 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>Parent Portal | WonderNest Play</title>
+        <meta
+            name="description"
+            content="Manage family bookings, memberships, children, parties and visits."
+        />
+        <link rel="stylesheet" href="../assets/css/dashboard.css" />
+        <script src="../assets/js/theme.js"></script>
+    </head>
+    <body class="dashboard-page" data-portal="parent">
+        <header class="dashboard-topbar">
+            <button
+                class="menu-btn"
+                data-dashboard-menu
+                aria-label="Open menu"
+                aria-expanded="false"
+            >
+                ☰
+            </button>
+            <a class="topbar-brand" href="index.html">
+                <span class="brand-mark">W</span>
+                <span>WonderNest Play</span>
+            </a>
+            <div class="topbar-actions">
+                <button class="icon-btn" data-theme-toggle aria-label="Toggle dark mode">◐</button>
+                <button
+                    class="icon-btn direction-toggle"
+                    data-direction-toggle
+                    aria-label="Toggle text direction"
+                >
+                    RTL
+                </button>
+                <div class="dropdown">
+                    <button
+                        class="icon-btn"
+                        data-dropdown-trigger="notifications"
+                        aria-label="Notifications"
+                        aria-expanded="false"
+                    >
+                        <svg class="dashboard-bell" aria-hidden="true" viewBox="0 0 24 24">
+                            <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"></path>
+                            <path d="M10 21h4"></path>
+                        </svg>
+                        <span class="notification-count">5</span>
+                    </button>
+                    <div class="dashboard-dropdown" data-dropdown="notifications" hidden>
+                        <h3>Notifications</h3>
+                        <div class="notice">
+                            <i class="notice-dot"></i>
+                            <span>Booking confirmed for 3:00 PM</span>
+                        </div>
+                        <div class="notice">
+                            <i class="notice-dot"></i>
+                            <span>Explorer Plus has 7 sessions remaining</span>
+                        </div>
+                        <div class="notice">
+                            <i class="notice-dot"></i>
+                            <span>Birthday package enquiry updated</span>
+                        </div>
+                        <div class="notice">
+                            <i class="notice-dot"></i>
+                            <span>New invoice available</span>
+                        </div>
+                        <div class="notice">
+                            <i class="notice-dot"></i>
+                            <span>Weekend slots are filling quickly</span>
+                        </div>
+                        <div class="dropdown-actions">
+                            <button data-mark-read>Mark all as read</button>
+                            <a href="#notifications" data-view-link="notifications">View all</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button
+                        class="profile-control"
+                        data-dropdown-trigger="profile"
+                        aria-expanded="false"
+                    >
+                        <span class="avatar">PS</span>
+                        <span class="profile-copy">
+                            <strong>Priya Sharma</strong>
+                            <small>Parent account</small>
+                        </span>
+                        <span>⌄</span>
+                    </button>
+                    <div class="dashboard-dropdown" data-dropdown="profile" hidden>
+                        <a class="dropdown-link" href="#profile" data-view-link="profile">
+                            My Profile
+                        </a>
+                        <a class="dropdown-link" href="#settings" data-view-link="settings">
+                            Account Settings
+                        </a>
+                        <a
+                            class="dropdown-link"
+                            href="#notifications"
+                            data-view-link="notifications"
+                        >
+                            Notifications
+                        </a>
+                        <a class="dropdown-link" href="#messages" data-view-link="messages">Help</a>
+                        <a class="dropdown-link" href="login.html">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="dashboard-layout">
+            <aside class="dashboard-sidebar" data-sidebar>
+                <a class="sidebar-brand" href="index.html">
+                    <span class="brand-mark">W</span>
+                    <span>WonderNest Play</span>
+                </a>
+                <span class="portal-label">PARENT PORTAL</span>
+                <nav class="dashboard-nav" aria-label="Parent portal">
+                    <a class="sidebar-link active" href="#overview" data-view-link="overview">
+                        <span class="nav-icon">
+                            <svg>
+                                <use href="../assets/images/dashboard-icons.svg#overview"></use>
+                            </svg>
+                        </span>
+                        Overview
+                    </a>
+                    <a class="sidebar-link" href="#book" data-view-link="book">
+                        <span class="nav-icon">
+                            <svg>
+                                <use href="../assets/images/dashboard-icons.svg#calendar"></use>
+                            </svg>
+                        </span>
+                        Book a Session
+                    </a>
+                    <a class="sidebar-link" href="#bookings" data-view-link="bookings">
+                        <span class="nav-icon">
+                            <svg>
+                                <use href="../assets/images/dashboard-icons.svg#bookings"></use>
+                            </svg>
+                        </span>
+                        My Bookings
+                    </a>
+                    <a class="sidebar-link" href="#children" data-view-link="children">
+                        <span class="nav-icon">
+                            <svg>
+                                <use href="../assets/images/dashboard-icons.svg#children"></use>
+                            </svg>
+                        </span>
+                        Children
+                    </a>
+                    <a class="sidebar-link" href="#membership" data-view-link="membership">
+                        <span class="nav-icon">
+                            <svg>
+                                <use href="../assets/images/dashboard-icons.svg#membership"></use>
+                            </svg>
+                        </span>
+                        Membership
+                    </a>
+                    <a class="sidebar-link" href="#parties" data-view-link="parties">
+                        <span class="nav-icon">
+                            <svg>
+                                <use href="../assets/images/dashboard-icons.svg#birthday"></use>
+                            </svg>
+                        </span>
+                        Birthday Parties
+                    </a>
+                    <a class="sidebar-link" href="#history" data-view-link="history">
+                        <span class="nav-icon">
+                            <svg>
+                                <use href="../assets/images/dashboard-icons.svg#history"></use>
+                            </svg>
+                        </span>
+                        Visit History
+                    </a>
+                    <a class="sidebar-link" href="#invoices" data-view-link="invoices">
+                        <span class="nav-icon">
+                            <svg>
+                                <use href="../assets/images/dashboard-icons.svg#invoice"></use>
+                            </svg>
+                        </span>
+                        Invoices
+                    </a>
+                    <a class="sidebar-link" href="#messages" data-view-link="messages">
+                        <span class="nav-icon">
+                            <svg>
+                                <use href="../assets/images/dashboard-icons.svg#messages"></use>
+                            </svg>
+                        </span>
+                        Messages
+                    </a>
+                    <a class="sidebar-link" href="#notifications" data-view-link="notifications">
+                        <span class="nav-icon">
+                            <svg>
+                                <use
+                                    href="../assets/images/dashboard-icons.svg#notifications"
+                                ></use>
+                            </svg>
+                        </span>
+                        Notifications
+                    </a>
+                    <a class="sidebar-link" href="#profile" data-view-link="profile">
+                        <span class="nav-icon">
+                            <svg>
+                                <use href="../assets/images/dashboard-icons.svg#profile"></use>
+                            </svg>
+                        </span>
+                        Profile
+                    </a>
+                    <a class="sidebar-link" href="#settings" data-view-link="settings">
+                        <span class="nav-icon">
+                            <svg>
+                                <use href="../assets/images/dashboard-icons.svg#settings"></use>
+                            </svg>
+                        </span>
+                        Settings
+                    </a>
+                    <a class="sidebar-link" href="login.html">
+                        <span class="nav-icon">
+                            <svg>
+                                <use href="../assets/images/dashboard-icons.svg#logout"></use>
+                            </svg>
+                        </span>
+                        Logout
+                    </a>
+                </nav>
+                <div class="sidebar-card">
+                    <small>NEXT PLAY SESSION</small>
+                    <h3>18 Sep · 3:00 PM</h3>
+                    <p>Junior Adventure · Aarav</p>
+                    <button class="btn btn-sm" data-view-link="bookings">View Booking</button>
+                </div>
+            </aside>
+            <div class="sidebar-backdrop" data-sidebar-backdrop></div>
+            <main class="dashboard-main" id="main-content">
+                <section class="dashboard-view" data-dashboard-view="overview">
+                    <div class="page-intro centered">
+                        <span class="eyebrow">OVERVIEW</span>
+                        <h1>Welcome back, Priya</h1>
+                        <p>
+                            Everything for your family's next WonderNest adventure, all in one
+                            place.
+                        </p>
+                    </div>
+                    <div class="kpi-grid">
+                        <article class="panel metric">
+                            <span class="metric-icon">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <rect x="3" y="5" width="18" height="16" rx="2"></rect>
+                                    <path d="M16 3v4M8 3v4M3 10h18M12 14v3M10.5 15.5h3"></path>
+                                </svg>
+                            </span>
+                            <span class="metric-label">Next Visit</span>
+                            <strong class="metric-value">18 Sep · 3 PM</strong>
+                            <span class="metric-meta">Junior Adventure · Confirmed</span>
+                        </article>
+                        <article class="panel metric">
+                            <span class="metric-icon">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <circle cx="12" cy="12" r="9"></circle>
+                                    <path d="M12 7v5l3 2"></path>
+                                </svg>
+                            </span>
+                            <span class="metric-label">Sessions Remaining</span>
+                            <strong class="metric-value">7</strong>
+                            <span class="metric-meta">5 of 12 sessions used</span>
+                        </article>
+                        <article class="panel metric">
+                            <span class="metric-icon">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+                                    <path d="M3 10h18M7 15h4"></path>
+                                </svg>
+                            </span>
+                            <span class="metric-label">Membership</span>
+                            <strong class="metric-value">Explorer Plus</strong>
+                            <span class="metric-meta">Active until 30 Nov 2026</span>
+                        </article>
+                        <article class="panel metric">
+                            <span class="metric-icon">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M3 12a9 9 0 1 0 3-6.7L3 8"></path>
+                                    <path d="M3 3v5h5M12 7v5l3 2"></path>
+                                </svg>
+                            </span>
+                            <span class="metric-label">Total Visits</span>
+                            <strong class="metric-value">24</strong>
+                            <span class="metric-meta up">+5 visits this month</span>
+                        </article>
+                    </div>
+                    <div class="compact-grid">
+                        <article class="panel compact-stat">
+                            <span class="metric-label">Birthday Credits</span>
+                            <strong>1 available</strong>
+                        </article>
+                        <article class="panel compact-stat">
+                            <span class="metric-label">Reward Points</span>
+                            <strong>1,280</strong>
+                        </article>
+                        <article class="panel compact-stat">
+                            <span class="metric-label">Favourite Zone</span>
+                            <strong>Junior Adventure</strong>
+                        </article>
+                        <article class="panel compact-stat">
+                            <span class="metric-label">Children Profiles</span>
+                            <strong>2</strong>
+                        </article>
+                    </div>
+                    <div class="chart-grid">
+                        <article class="panel chart-card">
+                            <div class="panel-head">
+                                <div>
+                                    <h3>Family Visits</h3>
+                                    <span class="panel-subtitle">
+                                        Your visits over the last 6 months.
+                                    </span>
+                                </div>
+                                <select>
+                                    <option>6 Months</option>
+                                </select>
+                            </div>
+                            <div class="chart-box">
+                                <canvas data-chart="parent-visits"></canvas>
+                            </div>
+                        </article>
+                        <article class="panel chart-card">
+                            <div class="panel-head">
+                                <div>
+                                    <h3>Membership Usage</h3>
+                                    <span class="panel-subtitle">5 used · 7 remaining</span>
+                                </div>
+                            </div>
+                            <div class="chart-box"><canvas data-chart="parent-usage"></canvas></div>
+                        </article>
+                    </div>
+                    <div class="dashboard-grid">
+                        <article class="panel span-7">
+                            <div class="panel-head">
+                                <div>
+                                    <span class="eyebrow">UPCOMING PLAY SESSION</span>
+                                    <h3>Junior Adventure</h3>
+                                </div>
+                                <span class="badge confirmed">Confirmed</span>
+                            </div>
+                            <dl class="detail-grid">
+                                <div>
+                                    <dt>Booking ID</dt>
+                                    <dd>WN-10482</dd>
+                                </div>
+                                <div>
+                                    <dt>Child</dt>
+                                    <dd>Aarav Sharma · Age 6</dd>
+                                </div>
+                                <div>
+                                    <dt>Date</dt>
+                                    <dd>18 September 2026</dd>
+                                </div>
+                                <div>
+                                    <dt>Time</dt>
+                                    <dd>3:00 PM · 90 Minutes</dd>
+                                </div>
+                            </dl>
+                            <div class="button-row">
+                                <button
+                                    class="btn btn-primary btn-sm"
+                                    data-open-modal="Booking WN-10482"
+                                >
+                                    View Details
+                                </button>
+                                <button class="btn btn-sm">Reschedule</button>
+                            </div>
+                        </article>
+                        <article class="panel span-5">
+                            <div class="panel-head">
+                                <h3>Today's Availability</h3>
+                                <button class="btn btn-sm" data-view-link="book">Book</button>
+                            </div>
+                            <div class="list">
+                                <div>
+                                    <div class="row-between">
+                                        <small>Toddler Zone</small>
+                                        <small>10 spaces</small>
+                                    </div>
+                                    <div class="progress"><span style="width: 38%"></span></div>
+                                </div>
+                                <div>
+                                    <div class="row-between">
+                                        <small>Junior Adventure</small>
+                                        <small>6 spaces</small>
+                                    </div>
+                                    <div class="progress"><span style="width: 64%"></span></div>
+                                </div>
+                                <div>
+                                    <div class="row-between">
+                                        <small>Explorer Zone</small>
+                                        <small>4 spaces</small>
+                                    </div>
+                                    <div class="progress"><span style="width: 78%"></span></div>
+                                </div>
+                                <div>
+                                    <div class="row-between">
+                                        <small>Challenge Zone · Limited</small>
+                                        <small>2 spaces</small>
+                                    </div>
+                                    <div class="progress"><span style="width: 92%"></span></div>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="panel span-7">
+                            <div class="panel-head">
+                                <div>
+                                    <h3>My Children</h3>
+                                    <span class="panel-subtitle">Profiles and recent activity</span>
+                                </div>
+                                <button class="btn btn-sm" data-view-link="children">
+                                    + Add Child
+                                </button>
+                            </div>
+                            <div class="list">
+                                <div class="list-row">
+                                    <span class="avatar">AS</span>
+                                    <div>
+                                        <strong>Aarav Sharma · Age 6</strong>
+                                        <p>Junior Adventure · 15 visits</p>
+                                    </div>
+                                    <button class="btn btn-sm">View Profile</button>
+                                </div>
+                                <div class="list-row">
+                                    <span class="avatar">AN</span>
+                                    <div>
+                                        <strong>Anaya Sharma · Age 3</strong>
+                                        <p>Toddler Zone · 9 visits</p>
+                                    </div>
+                                    <button class="btn btn-sm">View Profile</button>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="panel span-5 chart-card">
+                            <div class="panel-head">
+                                <div>
+                                    <h3>Favourite Play Zones</h3>
+                                    <span class="panel-subtitle">Visits by zone</span>
+                                </div>
+                            </div>
+                            <div class="chart-box small">
+                                <canvas data-chart="parent-zones"></canvas>
+                            </div>
+                        </article>
+                        <article class="panel span-8">
+                            <div class="panel-head">
+                                <h3>Recent Visits</h3>
+                                <button class="btn btn-sm" data-view-link="history">
+                                    View all
+                                </button>
+                            </div>
+                            <div class="table-wrap">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Visit ID</th>
+                                            <th>Date</th>
+                                            <th>Child</th>
+                                            <th>Zone</th>
+                                            <th>Duration</th>
+                                            <th>Amount</th>
+                                            <th>Status</th>
+                                            <th>Invoice</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>WN-V1024</td>
+                                            <td>12 Sep 2026</td>
+                                            <td>Aarav</td>
+                                            <td>Junior Adventure</td>
+                                            <td>90 min</td>
+                                            <td>₹699</td>
+                                            <td><span class="badge completed">Completed</span></td>
+                                            <td><button class="btn btn-sm">Download</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>WN-V1018</td>
+                                            <td>05 Sep 2026</td>
+                                            <td>Anaya</td>
+                                            <td>Toddler Zone</td>
+                                            <td>60 min</td>
+                                            <td>₹499</td>
+                                            <td><span class="badge completed">Completed</span></td>
+                                            <td><button class="btn btn-sm">Download</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>WN-V1009</td>
+                                            <td>29 Aug 2026</td>
+                                            <td>Aarav</td>
+                                            <td>Explorer Zone</td>
+                                            <td>90 min</td>
+                                            <td>₹699</td>
+                                            <td><span class="badge completed">Completed</span></td>
+                                            <td><button class="btn btn-sm">Download</button></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </article>
+                        <article class="panel span-4">
+                            <span class="eyebrow">UPCOMING BIRTHDAY PARTY</span>
+                            <h3>Aarav's Space Explorer Party</h3>
+                            <p class="panel-subtitle">Super Celebration · 10 October 2026</p>
+                            <dl class="detail-grid">
+                                <div>
+                                    <dt>Guests</dt>
+                                    <dd>18</dd>
+                                </div>
+                                <div>
+                                    <dt>Status</dt>
+                                    <dd><span class="badge confirmed">Confirmed</span></dd>
+                                </div>
+                            </dl>
+                            <button class="btn btn-primary btn-sm" data-view-link="parties">
+                                Manage Party
+                            </button>
+                        </article>
+                        <article class="panel span-7">
+                            <div class="panel-head">
+                                <h3>Recent Activity</h3>
+                                <button class="btn btn-sm" data-view-link="notifications">
+                                    All activity
+                                </button>
+                            </div>
+                            <div class="list">
+                                <div class="list-row">
+                                    <span class="metric-icon">
+                                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                                            <rect x="3" y="5" width="18" height="16" rx="2"></rect>
+                                            <path d="M16 3v4M8 3v4M3 10h18M8 15l2 2 5-5"></path>
+                                        </svg>
+                                    </span>
+                                    <div>
+                                        <strong>Booking confirmed</strong>
+                                        <p>Junior Adventure for Aarav</p>
+                                    </div>
+                                    <span class="activity-time">Today</span>
+                                </div>
+                                <div class="list-row">
+                                    <span class="metric-icon">
+                                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                                            <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+                                            <path d="M3 10h18M7 15h4"></path>
+                                        </svg>
+                                    </span>
+                                    <div>
+                                        <strong>Membership renewed</strong>
+                                        <p>Explorer Plus is active</p>
+                                    </div>
+                                    <span class="activity-time">3 days</span>
+                                </div>
+                                <div class="list-row">
+                                    <span class="metric-icon">
+                                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                                            <path d="M6 3h12v18l-3-2-3 2-3-2-3 2V3Z"></path>
+                                            <path d="M9 8h6M9 12h6M9 16h3"></path>
+                                        </svg>
+                                    </span>
+                                    <div>
+                                        <strong>Invoice generated</strong>
+                                        <p>Invoice WN-I2098 is ready</p>
+                                    </div>
+                                    <span class="activity-time">5 days</span>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="panel span-5">
+                            <div class="panel-head"><h3>Quick Actions</h3></div>
+                            <div class="action-grid">
+                                <button class="btn" data-view-link="book">Book Session</button>
+                                <button class="btn" data-view-link="children">Add Child</button>
+                                <button class="btn" data-view-link="membership">
+                                    Renew Membership
+                                </button>
+                                <button class="btn" data-view-link="parties">Plan Birthday</button>
+                                <button class="btn" data-view-link="invoices">
+                                    Download Invoice
+                                </button>
+                                <button class="btn" data-view-link="messages">
+                                    Contact Support
+                                </button>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+                <section class="dashboard-view" data-dashboard-view="book" hidden>
+                    <div class="page-intro">
+                        <div>
+                            <span class="eyebrow">NEW BOOKING</span>
+                            <h1>Book a Play Session</h1>
+                            <p>Find the best available play time for your children.</p>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="stepper">
+                            <span class="step active" data-step-indicator>01 Date</span>
+                            <span class="step" data-step-indicator>02 Children</span>
+                            <span class="step" data-step-indicator>03 Zone</span>
+                            <span class="step" data-step-indicator>04 Time</span>
+                            <span class="step" data-step-indicator>05 Review</span>
+                        </div>
+                        <div class="booking-pane active" data-booking-pane>
+                            <h3>Choose your visit date</h3>
+                            <div class="form-grid">
+                                <div class="field">
+                                    <label>Date</label>
+                                    <input type="date" value="2026-09-18" />
+                                </div>
+                                <div class="field">
+                                    <label>Preferred duration</label>
+                                    <select>
+                                        <option>90 minutes</option>
+                                        <option>60 minutes</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <br />
+                            <button class="btn btn-primary" data-next-step>Continue</button>
+                        </div>
+                        <div class="booking-pane" data-booking-pane>
+                            <h3>Select children</h3>
+                            <div class="choice-grid">
+                                <button class="choice selected" data-choice>Aarav · Age 6</button>
+                                <button class="choice" data-choice>Anaya · Age 3</button>
+                                <button class="choice">+ Add Child</button>
+                            </div>
+                            <button class="btn" data-prev-step>Back</button>
+                            <button class="btn btn-primary" data-next-step>Continue</button>
+                        </div>
+                        <div class="booking-pane" data-booking-pane>
+                            <h3>Recommended zones</h3>
+                            <div class="choice-grid">
+                                <button class="choice selected" data-choice>
+                                    Junior Adventure
+                                    <br />
+                                    <small>Best for ages 5–8</small>
+                                </button>
+                                <button class="choice" data-choice>
+                                    Explorer Zone
+                                    <br />
+                                    <small>Best for ages 7–11</small>
+                                </button>
+                                <button class="choice" data-choice>
+                                    Challenge Zone
+                                    <br />
+                                    <small>Best for ages 8–12</small>
+                                </button>
+                            </div>
+                            <button class="btn" data-prev-step>Back</button>
+                            <button class="btn btn-primary" data-next-step>Continue</button>
+                        </div>
+                        <div class="booking-pane" data-booking-pane>
+                            <h3>Available time slots</h3>
+                            <div class="choice-grid">
+                                <button class="choice" data-choice>10:00 AM</button>
+                                <button class="choice selected" data-choice>3:00 PM</button>
+                                <button class="choice" data-choice>5:00 PM</button>
+                            </div>
+                            <button class="btn" data-prev-step>Back</button>
+                            <button class="btn btn-primary" data-next-step>Review</button>
+                        </div>
+                        <div class="booking-pane" data-booking-pane>
+                            <h3>Booking summary</h3>
+                            <dl class="detail-grid">
+                                <div>
+                                    <dt>Child</dt>
+                                    <dd>Aarav Sharma</dd>
+                                </div>
+                                <div>
+                                    <dt>Zone</dt>
+                                    <dd>Junior Adventure</dd>
+                                </div>
+                                <div>
+                                    <dt>Date</dt>
+                                    <dd>18 Sep 2026</dd>
+                                </div>
+                                <div>
+                                    <dt>Time</dt>
+                                    <dd>3:00 PM</dd>
+                                </div>
+                            </dl>
+                            <button class="btn" data-prev-step>Back</button>
+                            <button class="btn btn-primary" data-confirm-booking>
+                                Confirm Booking
+                            </button>
+                        </div>
+                    </div>
+                </section>
+                <section class="dashboard-view" data-dashboard-view="bookings" hidden>
+                    <div class="page-intro">
+                        <div>
+                            <span class="eyebrow">FAMILY SCHEDULE</span>
+                            <h1>My Bookings</h1>
+                            <p>Review upcoming and previous play sessions.</p>
+                        </div>
+                    </div>
+                    <div class="compact-grid">
+                        <article class="panel compact-stat">
+                            <span class="metric-label">Upcoming</span>
+                            <strong>3</strong>
+                        </article>
+                        <article class="panel compact-stat">
+                            <span class="metric-label">Completed</span>
+                            <strong>24</strong>
+                        </article>
+                        <article class="panel compact-stat">
+                            <span class="metric-label">Cancelled</span>
+                            <strong>1</strong>
+                        </article>
+                        <article class="panel compact-stat">
+                            <span class="metric-label">Total Spent</span>
+                            <strong>₹16,276</strong>
+                        </article>
+                    </div>
+                    <div class="filter-bar">
+                        <input
+                            data-table-search="parent-bookings"
+                            placeholder="Search booking, child or zone"
+                        />
+                        <select data-table-filter="status">
+                            <option value="">All statuses</option>
+                            <option>Confirmed</option>
+                            <option>Completed</option>
+                            <option>Cancelled</option>
+                        </select>
+                        <input type="date" />
+                    </div>
+                    <div class="table-wrap">
+                        <table data-table="parent-bookings">
+                            <thead>
+                                <tr>
+                                    <th>Booking ID</th>
+                                    <th>Child</th>
+                                    <th>Zone</th>
+                                    <th>Date</th>
+                                    <th>Time</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>WN-10482</td>
+                                    <td>Aarav</td>
+                                    <td>Junior Adventure</td>
+                                    <td>18 Sep</td>
+                                    <td>3:00 PM</td>
+                                    <td>₹699</td>
+                                    <td data-status="Confirmed">
+                                        <span class="badge confirmed">Confirmed</span>
+                                    </td>
+                                    <td><button class="btn btn-sm">Manage</button></td>
+                                </tr>
+                                <tr>
+                                    <td>WN-10411</td>
+                                    <td>Anaya</td>
+                                    <td>Toddler Zone</td>
+                                    <td>12 Sep</td>
+                                    <td>10:00 AM</td>
+                                    <td>₹499</td>
+                                    <td data-status="Completed">
+                                        <span class="badge completed">Completed</span>
+                                    </td>
+                                    <td><button class="btn btn-sm">Details</button></td>
+                                </tr>
+                                <tr>
+                                    <td>WN-10362</td>
+                                    <td>Aarav</td>
+                                    <td>Explorer Zone</td>
+                                    <td>29 Aug</td>
+                                    <td>4:00 PM</td>
+                                    <td>₹699</td>
+                                    <td data-status="Cancelled">
+                                        <span class="badge cancelled">Cancelled</span>
+                                    </td>
+                                    <td><button class="btn btn-sm">Rebook</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+                <section class="dashboard-view" data-dashboard-view="children" hidden>
+                    <div class="page-intro">
+                        <div>
+                            <span class="eyebrow">FAMILY PROFILES</span>
+                            <h1>Children</h1>
+                            <p>Keep each child's details and play preferences up to date.</p>
+                        </div>
+                        <button class="btn btn-primary">+ Add Child</button>
+                    </div>
+                    <div class="two-col">
+                        <article class="panel">
+                            <div class="list-row">
+                                <span class="avatar">AS</span>
+                                <div>
+                                    <h3>Aarav Sharma</h3>
+                                    <p>Age 6 · Junior Adventure · 15 visits</p>
+                                </div>
+                                <span class="badge active">Active</span>
+                            </div>
+                            <br />
+                            <div class="progress"><span style="width: 72%"></span></div>
+                            <p class="panel-subtitle">Adventure milestones · 72%</p>
+                            <button class="btn btn-sm">View Profile</button>
+                        </article>
+                        <article class="panel">
+                            <div class="list-row">
+                                <span class="avatar">AN</span>
+                                <div>
+                                    <h3>Anaya Sharma</h3>
+                                    <p>Age 3 · Toddler Zone · 9 visits</p>
+                                </div>
+                                <span class="badge active">Active</span>
+                            </div>
+                            <br />
+                            <div class="progress"><span style="width: 45%"></span></div>
+                            <p class="panel-subtitle">Adventure milestones · 45%</p>
+                            <button class="btn btn-sm">View Profile</button>
+                        </article>
+                    </div>
+                </section>
+                <section class="dashboard-view" data-dashboard-view="membership" hidden>
+                    <div class="page-intro">
+                        <div>
+                            <span class="eyebrow">ACTIVE PLAN</span>
+                            <h1>My Membership</h1>
+                            <p>Track sessions, benefits, renewal and payments.</p>
+                        </div>
+                        <button class="btn btn-primary">Renew Membership</button>
+                    </div>
+                    <article class="panel">
+                        <div class="panel-head">
+                            <div>
+                                <h2>Explorer Plus</h2>
+                                <p class="panel-subtitle">12 sessions · 5 used · 7 remaining</p>
+                            </div>
+                            <span class="badge active">Active</span>
+                        </div>
+                        <div class="progress"><span style="width: 42%"></span></div>
+                        <dl class="detail-grid">
+                            <div>
+                                <dt>Start</dt>
+                                <dd>01 Sep 2026</dd>
+                            </div>
+                            <div>
+                                <dt>Expiry</dt>
+                                <dd>30 Nov 2026</dd>
+                            </div>
+                            <div>
+                                <dt>Visits included</dt>
+                                <dd>12</dd>
+                            </div>
+                            <div>
+                                <dt>Birthday credit</dt>
+                                <dd>1 available</dd>
+                            </div>
+                        </dl>
+                    </article>
+                    <br />
+                    <div class="chart-grid equal">
+                        <article class="panel chart-card">
+                            <div class="panel-head"><h3>Session Usage by Month</h3></div>
+                            <div class="chart-box">
+                                <canvas data-chart="membership-monthly"></canvas>
+                            </div>
+                        </article>
+                        <article class="panel chart-card">
+                            <div class="panel-head"><h3>Visits by Zone</h3></div>
+                            <div class="chart-box">
+                                <canvas data-chart="membership-zones"></canvas>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="two-col">
+                        <article class="panel">
+                            <h3>Membership Benefits</h3>
+                            <div class="list">
+                                <div class="list-row">Priority weekend booking</div>
+                                <div class="list-row">One birthday party credit</div>
+                                <div class="list-row">Member-only play events</div>
+                            </div>
+                        </article>
+                        <article class="panel">
+                            <h3>Plan Actions</h3>
+                            <div class="action-grid">
+                                <button class="btn btn-primary">Renew Membership</button>
+                                <button class="btn">Upgrade Plan</button>
+                                <button class="btn" data-view-link="invoices">
+                                    Payment History
+                                </button>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+                <section class="dashboard-view" data-dashboard-view="parties" hidden>
+                    <div class="page-intro">
+                        <div>
+                            <span class="eyebrow">CELEBRATIONS</span>
+                            <h1>Birthday Parties</h1>
+                            <p>Plan and manage memorable WonderNest celebrations.</p>
+                        </div>
+                        <button class="btn btn-primary">Book Another Party</button>
+                    </div>
+                    <div class="compact-grid">
+                        <article class="panel compact-stat">
+                            <span class="metric-label">Upcoming Party</span>
+                            <strong>1</strong>
+                        </article>
+                        <article class="panel compact-stat">
+                            <span class="metric-label">Previous Parties</span>
+                            <strong>2</strong>
+                        </article>
+                        <article class="panel compact-stat">
+                            <span class="metric-label">Birthday Credits</span>
+                            <strong>1</strong>
+                        </article>
+                        <article class="panel compact-stat">
+                            <span class="metric-label">Guests Hosted</span>
+                            <strong>42</strong>
+                        </article>
+                    </div>
+                    <div class="two-col">
+                        <article class="panel">
+                            <div class="panel-head">
+                                <div>
+                                    <h3>Aarav's Space Explorer Party</h3>
+                                    <p class="panel-subtitle">
+                                        Super Celebration · 10 October 2026
+                                    </p>
+                                </div>
+                                <span class="badge confirmed">Confirmed</span>
+                            </div>
+                            <dl class="detail-grid">
+                                <div>
+                                    <dt>Theme</dt>
+                                    <dd>Space Explorer</dd>
+                                </div>
+                                <div>
+                                    <dt>Guests</dt>
+                                    <dd>18</dd>
+                                </div>
+                                <div>
+                                    <dt>Paid</dt>
+                                    <dd>₹8,499</dd>
+                                </div>
+                                <div>
+                                    <dt>Balance</dt>
+                                    <dd>₹2,000</dd>
+                                </div>
+                            </dl>
+                        </article>
+                        <article class="panel">
+                            <h3>Party Checklist</h3>
+                            <div class="list">
+                                <div class="list-row">
+                                    <span class="badge completed">Done</span>
+                                    <div>Package selected</div>
+                                </div>
+                                <div class="list-row">
+                                    <span class="badge completed">Done</span>
+                                    <div>Theme confirmed</div>
+                                </div>
+                                <div class="list-row">
+                                    <span class="badge pending">Pending</span>
+                                    <div>Final guest count</div>
+                                </div>
+                                <div class="list-row">
+                                    <span class="badge pending">Pending</span>
+                                    <div>Balance payment</div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+                <section class="dashboard-view" data-dashboard-view="history" hidden>
+                    <div class="page-intro">
+                        <div>
+                            <span class="eyebrow">PLAY RECORD</span>
+                            <h1>Visit History</h1>
+                            <p>See family activity, hours and favourite zones.</p>
+                        </div>
+                    </div>
+                    <div class="compact-grid">
+                        <article class="panel compact-stat">
+                            <span class="metric-label">Total Visits</span>
+                            <strong>24</strong>
+                        </article>
+                        <article class="panel compact-stat">
+                            <span class="metric-label">Play Hours</span>
+                            <strong>31.5</strong>
+                        </article>
+                        <article class="panel compact-stat">
+                            <span class="metric-label">Favourite Zone</span>
+                            <strong>Junior</strong>
+                        </article>
+                        <article class="panel compact-stat">
+                            <span class="metric-label">Total Spent</span>
+                            <strong>₹16,276</strong>
+                        </article>
+                    </div>
+                    <article class="panel chart-card">
+                        <div class="panel-head"><h3>Visits by Month</h3></div>
+                        <div class="chart-box"><canvas data-chart="history-visits"></canvas></div>
+                    </article>
+                    <br />
+                    <div class="table-wrap">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Visit</th>
+                                    <th>Date</th>
+                                    <th>Child</th>
+                                    <th>Zone</th>
+                                    <th>Hours</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>WN-V1024</td>
+                                    <td>12 Sep 2026</td>
+                                    <td>Aarav</td>
+                                    <td>Junior Adventure</td>
+                                    <td>1.5</td>
+                                    <td>₹699</td>
+                                    <td><span class="badge completed">Completed</span></td>
+                                </tr>
+                                <tr>
+                                    <td>WN-V1018</td>
+                                    <td>05 Sep 2026</td>
+                                    <td>Anaya</td>
+                                    <td>Toddler</td>
+                                    <td>1</td>
+                                    <td>₹499</td>
+                                    <td><span class="badge completed">Completed</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+                <section class="dashboard-view" data-dashboard-view="invoices" hidden>
+                    <div class="page-intro">
+                        <div>
+                            <span class="eyebrow">BILLING</span>
+                            <h1>Invoices</h1>
+                            <p>Review and download payments for sessions, plans and parties.</p>
+                        </div>
+                    </div>
+                    <div class="compact-grid">
+                        <article class="panel compact-stat">
+                            <span class="metric-label">Total Paid</span>
+                            <strong>₹32,775</strong>
+                        </article>
+                        <article class="panel compact-stat">
+                            <span class="metric-label">Pending</span>
+                            <strong>₹2,000</strong>
+                        </article>
+                        <article class="panel compact-stat">
+                            <span class="metric-label">Invoices</span>
+                            <strong>18</strong>
+                        </article>
+                        <article class="panel compact-stat">
+                            <span class="metric-label">Membership Payments</span>
+                            <strong>3</strong>
+                        </article>
+                    </div>
+                    <div class="table-wrap">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Invoice</th>
+                                    <th>Date</th>
+                                    <th>Type</th>
+                                    <th>Description</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                    <th>Download</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>WN-I2098</td>
+                                    <td>12 Sep</td>
+                                    <td>Session</td>
+                                    <td>Junior Adventure</td>
+                                    <td>₹699</td>
+                                    <td><span class="badge paid">Paid</span></td>
+                                    <td><button class="btn btn-sm">Download</button></td>
+                                </tr>
+                                <tr>
+                                    <td>WN-I2082</td>
+                                    <td>01 Sep</td>
+                                    <td>Membership</td>
+                                    <td>Explorer Plus</td>
+                                    <td>₹5,999</td>
+                                    <td><span class="badge paid">Paid</span></td>
+                                    <td><button class="btn btn-sm">Download</button></td>
+                                </tr>
+                                <tr>
+                                    <td>WN-I2075</td>
+                                    <td>28 Aug</td>
+                                    <td>Birthday</td>
+                                    <td>Party balance</td>
+                                    <td>₹2,000</td>
+                                    <td><span class="badge pending">Pending</span></td>
+                                    <td><button class="btn btn-sm">View</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+                <section class="dashboard-view" data-dashboard-view="messages" hidden>
+                    <div class="page-intro">
+                        <div>
+                            <span class="eyebrow">SUPPORT</span>
+                            <h1>Messages</h1>
+                            <p>Keep every booking and celebration conversation in one place.</p>
+                        </div>
+                    </div>
+                    <div class="panel inbox">
+                        <div class="conversation-list">
+                            <button class="conversation active">
+                                <strong>WonderNest Support</strong>
+                                <small>
+                                    <br />
+                                    Booking WN-10482 is confirmed.
+                                </small>
+                            </button>
+                            <button class="conversation">
+                                <strong>Birthday Coordinator</strong>
+                                <small>
+                                    <br />
+                                    Your theme board is ready.
+                                </small>
+                            </button>
+                            <button class="conversation">
+                                <strong>Membership Team</strong>
+                                <small>
+                                    <br />
+                                    Renewal options for Explorer Plus.
+                                </small>
+                            </button>
+                        </div>
+                        <div class="message-pane">
+                            <div class="panel-head">
+                                <div>
+                                    <h3>WonderNest Support</h3>
+                                    <span class="panel-subtitle">
+                                        Usually replies within 20 minutes
+                                    </span>
+                                </div>
+                                <span class="badge active">Online</span>
+                            </div>
+                            <div class="message-body">
+                                <p>
+                                    Hello Priya, your Junior Adventure booking for Aarav is
+                                    confirmed for 18 September at 3:00 PM.
+                                </p>
+                                <p>Please arrive 10 minutes early for check-in.</p>
+                            </div>
+                            <div class="message-compose">
+                                <input placeholder="Write a message" />
+                                <button class="btn btn-primary">Send</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="dashboard-view" data-dashboard-view="notifications" hidden>
+                    <div class="page-intro">
+                        <div>
+                            <span class="eyebrow">UPDATES</span>
+                            <h1>Notifications</h1>
+                            <p>Important family account and booking updates.</p>
+                        </div>
+                        <button class="btn" data-mark-read>Mark All as Read</button>
+                    </div>
+                    <div class="panel list">
+                        <div class="list-row">
+                            <i class="notice-dot"></i>
+                            <div>
+                                <strong>Booking confirmed for 3:00 PM</strong>
+                                <p>Junior Adventure · Aarav · 18 September</p>
+                            </div>
+                            <span class="activity-time">Today</span>
+                        </div>
+                        <div class="list-row">
+                            <i class="notice-dot"></i>
+                            <div>
+                                <strong>Explorer Plus has 7 sessions remaining</strong>
+                                <p>Your plan is active until 30 November.</p>
+                            </div>
+                            <span class="activity-time">Yesterday</span>
+                        </div>
+                        <div class="list-row">
+                            <i class="notice-dot"></i>
+                            <div>
+                                <strong>New invoice available</strong>
+                                <p>Invoice WN-I2098 can now be downloaded.</p>
+                            </div>
+                            <span class="activity-time">3 days</span>
+                        </div>
+                    </div>
+                </section>
+                <section class="dashboard-view" data-dashboard-view="profile" hidden>
+                    <div class="page-intro">
+                        <div>
+                            <span class="eyebrow">ACCOUNT</span>
+                            <h1>My Profile</h1>
+                            <p>Manage parent and emergency contact information.</p>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="form-grid">
+                            <div class="field">
+                                <label>Full name</label>
+                                <input value="Priya Sharma" />
+                            </div>
+                            <div class="field">
+                                <label>Email</label>
+                                <input value="priya@example.com" />
+                            </div>
+                            <div class="field">
+                                <label>Phone</label>
+                                <input value="+91 98765 43210" />
+                            </div>
+                            <div class="field">
+                                <label>Emergency contact</label>
+                                <input value="Rohan Sharma" />
+                            </div>
+                        </div>
+                        <br />
+                        <button class="btn btn-primary">Save Changes</button>
+                    </div>
+                </section>
+                <section class="dashboard-view" data-dashboard-view="settings" hidden>
+                    <div class="page-intro">
+                        <div>
+                            <span class="eyebrow">PREFERENCES</span>
+                            <h1>Account Settings</h1>
+                            <p>Control communication, accessibility and privacy preferences.</p>
+                        </div>
+                    </div>
+                    <div class="two-col">
+                        <article class="panel">
+                            <h3>Notifications</h3>
+                            <div class="list">
+                                <label class="list-row">
+                                    <input type="checkbox" checked />
+                                    Booking reminders
+                                </label>
+                                <label class="list-row">
+                                    <input type="checkbox" checked />
+                                    Membership updates
+                                </label>
+                                <label class="list-row">
+                                    <input type="checkbox" />
+                                    Promotional messages
+                                </label>
+                            </div>
+                        </article>
+                        <article class="panel">
+                            <h3>Security</h3>
+                            <p class="panel-subtitle">Last password change: 22 August 2026</p>
+                            <button class="btn">Change Password</button>
+                        </article>
+                    </div>
+                </section>
+            </main>
+        </div>
+        <div class="modal" data-modal>
+            <div class="modal-card">
+                <div class="panel-head">
+                    <h2 data-modal-title>Booking Details</h2>
+                    <button class="icon-btn" data-close-modal>×</button>
+                </div>
+                <p>Your booking details are ready. This is a front-end demonstration.</p>
+                <button class="btn btn-primary" data-close-modal>Done</button>
+            </div>
+        </div>
+        <script src="../assets/js/chart.umd.min.js"></script>
+        <script src="../assets/js/dashboard-charts.js"></script>
+        <script src="../assets/js/dashboard.js"></script>
+    </body>
+</html>
