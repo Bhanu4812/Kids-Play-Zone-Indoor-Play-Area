@@ -79,6 +79,15 @@ h3 {
 .section--navy .lead {
     color: #cbd2df;
 }
+[data-theme="dark"] .section--soft,
+[data-theme="dark"] .section--navy,
+[data-theme="dark"] .contact-hero {
+    background: var(--bg);
+    color: var(--text);
+}
+[data-theme="dark"] .section--navy .lead {
+    color: var(--muted);
+}
 .skip-link {
     position: fixed;
     inset: 8px auto auto 8px;
@@ -409,6 +418,12 @@ h3 {
 }
 .card:hover .card-media img {
     transform: scale(1.02);
+}
+.team-grid .card-media {
+    aspect-ratio: 4 / 5;
+}
+.team-grid .card-media img {
+    object-position: center top;
 }
 .card-body {
     display: flex;
