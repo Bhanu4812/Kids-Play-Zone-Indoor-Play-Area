@@ -16,6 +16,12 @@ menuToggle?.addEventListener("click", () => {
     document.body.classList.toggle("menu-open", open);
     menuToggle.setAttribute("aria-expanded", String(open));
 });
+const mobileHeader = window.matchMedia("(max-width: 991px)");
+mobileHeader.addEventListener("change", () => {
+    nav?.classList.remove("open");
+    document.body.classList.remove("menu-open");
+    menuToggle?.setAttribute("aria-expanded", "false");
+});
 document.querySelectorAll("[data-dropdown-toggle]").forEach((toggle) => {
     toggle.addEventListener("click", (event) => {
         const dropdown = event.currentTarget.closest("[data-dropdown]");
@@ -91,18 +97,39 @@ if (ageResult) {
         '<div class="age-recommendation-details" data-age-details><p>Choose an age above and we’ll match your child with a zone designed for their stage.</p><ul><li>Safe age-based challenges</li><li>Clear session availability</li><li>Easy online booking</li></ul></div>',
     );
 }
-document.querySelectorAll("[data-filters] button").forEach((button) =>
-    button.addEventListener("click", () => {
-        button.parentElement
-            .querySelectorAll("button")
-            .forEach((item) => item.classList.remove("active"));
-        button.classList.add("active");
-        document.querySelectorAll("[data-filter-grid] [data-age]").forEach((item) => {
-            item.hidden =
-                button.dataset.filter !== "all" && item.dataset.age !== button.dataset.filter;
+document.querySelectorAll("[data-filters]").forEach((filters) => {
+    const grid = filters.parentElement.querySelector("[data-filter-grid]");
+    if (!grid) return;
+    const buttons = [...filters.querySelectorAll("button[data-filter]")];
+    const fragment = (value) => value === "all" ? "zones-all" : `zones-${value.replace(/\u2013/g, "-")}`;
+    const select = (button) => {
+        buttons.forEach((item) => {
+            const active = item === button;
+            item.classList.toggle("active", active);
+            item.setAttribute("aria-pressed", String(active));
         });
-    }),
-);
+        grid.querySelectorAll("[data-age]").forEach((item) => {
+            item.hidden = button.dataset.filter !== "all" && item.dataset.age !== button.dataset.filter;
+        });
+    };
+    const restore = () => {
+        const button = buttons.find((item) => fragment(item.dataset.filter) === location.hash.slice(1));
+        select(button || buttons[0]);
+    };
+    filters.setAttribute("role", "group");
+    filters.setAttribute("aria-label", "Filter play zones by age");
+    buttons.forEach((button) => {
+        button.type = "button";
+        button.addEventListener("click", () => {
+            select(button);
+            const hash = `#${fragment(button.dataset.filter)}`;
+            if (location.hash !== hash) history.pushState(null, "", hash);
+        });
+    });
+    window.addEventListener("popstate", restore);
+    window.addEventListener("hashchange", restore);
+    restore();
+});
 document.querySelectorAll("[data-demo-form]").forEach((form) =>
     form.addEventListener("submit", (event) => {
         event.preventDefault();

@@ -64,7 +64,7 @@ html[dir="rtl"] .visual-note {
     direction: rtl;
 }
 
-@media (max-width: 1180px) {
+@media (max-width: 991px) {
     html[dir="rtl"] .nav {
         right: 0;
         left: auto;
