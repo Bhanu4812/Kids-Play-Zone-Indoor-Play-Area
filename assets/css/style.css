@@ -420,10 +420,28 @@ h3 {
     transform: scale(1.02);
 }
 .team-grid .card-media {
-    aspect-ratio: 4 / 5;
+    aspect-ratio: auto;
+    height: 220px;
+    flex: 0 0 220px;
 }
 .team-grid .card-media img {
-    object-position: center top;
+    object-position: center 25%;
+}
+.team-grid .card-body,
+.play-zone-grid .card-body,
+[data-filter-grid] .card-body {
+    align-items: center;
+    text-align: center;
+}
+.team-grid .card-body h3,
+.play-zone-grid .card-body h3,
+[data-filter-grid] .card-body h3 {
+    margin: 0;
+}
+.team-grid .card-body p,
+.play-zone-grid .card-body p,
+[data-filter-grid] .card-body p {
+    margin: 0 0 8px;
 }
 .card-body {
     display: flex;
@@ -1996,5 +2014,101 @@ body[data-page="home"] .availability > .btn {
 @media (max-width: 991px) {
     html body .site-header .header-actions > :is(.header-login-link, .header-book) {
         display: none;
+    }
+}
+
+/* Keep play-zone cards compact across home and zone listings. */
+.party-package-grid .card-body,
+.party-theme-grid .card-body {
+    align-items: center;
+    text-align: center;
+}
+.party-package-grid .card-body h3,
+.party-theme-grid .card-body h3 {
+    margin: 0;
+}
+.party-package-grid .card-body p,
+.party-theme-grid .card-body p {
+    margin: 0 0 8px;
+}
+.party-package-grid .card-body {
+    display: grid;
+    grid-template-rows: auto 56px 1fr auto;
+    justify-items: center;
+}
+.party-package-grid .card-body h3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.35;
+}
+.party-package-grid .card-body p {
+    align-self: start;
+}
+.party-package-grid .card-body .btn {
+    align-self: end;
+    margin-top: 0;
+}
+[data-filter-grid],
+.play-zone-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+}
+.play-zone-grid .card-body {
+    display: grid;
+    grid-template-rows: auto 52px 1fr auto;
+    justify-items: center;
+    padding: 20px;
+}
+.play-zone-grid .card-body h3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.15rem;
+    line-height: 1.35;
+}
+.play-zone-grid .card-body .btn {
+    align-self: end;
+    margin-top: 0;
+}
+.play-zone-grid .card-body p {
+    align-self: start;
+}
+[data-filter-grid] .card-media,
+.play-zone-grid .card-media {
+    aspect-ratio: auto;
+    height: 180px;
+    flex: 0 0 180px;
+}
+@media (max-width: 1100px) {
+    [data-filter-grid],
+    .play-zone-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+@media (max-width: 540px) {
+    [data-filter-grid],
+    .play-zone-grid {
+        grid-template-columns: minmax(0, 1fr);
+        max-width: 360px;
+        margin-inline: auto;
+    }
+}
+/* Keep team portraits compact when the shared grids switch to two columns. */
+.team-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+}
+@media (max-width: 1100px) {
+    .team-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        max-width: 744px;
+        margin-inline: auto;
+    }
+}
+@media (max-width: 540px) {
+    .team-grid {
+        grid-template-columns: minmax(0, 1fr);
+        max-width: 360px;
     }
 }
